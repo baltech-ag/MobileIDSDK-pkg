@@ -13,6 +13,7 @@ datetime = "0.5.0"
 kotest = "5.8.0"
 datastore = "1.1.1"
 ktor = "2.3.7"
+maven-publish = "0.30.0"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -46,3 +47,4 @@ kotlin-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.
 android-library = { id = "com.android.library", version.ref = "android-gradle" }
 android-application = { id = "com.android.application", version.ref = "android-gradle" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-publish" }
