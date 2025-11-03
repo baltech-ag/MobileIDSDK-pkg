@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17495DE58D31D0DDEA84AC27 /* MobileIDSdk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* MobileIDSdk.xcframework */; };
-		17495DE58D31D0DDEA84AC28 /* MobileIDSdk.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* MobileIDSdk.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		17495DE58D31D0DDEA84AC27 /* MobileIDSdk in Frameworks */ = {isa = PBXBuildFile; productRef = PKG_MOBILEID_PRODUCT /* MobileIDSdk */; };
+		 };
 		2152FB042600AC8F00CF470E /* AppNoteSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* AppNoteSwiftApp.swift */; };
 		2152FB062600AC8F00CF470E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB052600AC8F00CF470E /* ContentView.swift */; };
 		2152FB082600AC9000CF470E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2152FB072600AC9000CF470E /* Assets.xcassets */; };
@@ -40,7 +40,6 @@
 		217D26842E97EE7F00CA2CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51CBB645E09BDF1197207A56 /* CredentialData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CredentialData.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* Mobile ID SDK AppNote (Swift).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile ID SDK AppNote (Swift).app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* MobileIDSdk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MobileIDSdk.xcframework; path = ../../sdk/build/XCFrameworks/debug/MobileIDSdk.xcframework; sourceTree = "<group>"; };
 		851EB62D8383D9BF6A7ED03C /* CredentialRepository.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CredentialRepository.swift; sourceTree = "<group>"; };
 		A30AEF12A1D19597ED16889F /* Screen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +99,6 @@
 		7555FF81242A565900829871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF82242A565900829871 /* MobileIDSdk.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,12 +149,34 @@
 			);
 			mainGroup = 7555FF72242A565900829871;
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
+				packageReferences = (
+					PKG_MOBILEID /* XCRemoteSwiftPackageReference "MobileIDSDK-pkg" */,
+				);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				7555FF7A242A565900829871 /* appnote-swift */,
 			);
 		};
+
+/* Begin XCRemoteSwiftPackageReference section */
+		PKG_MOBILEID /* XCRemoteSwiftPackageReference "MobileIDSDK-pkg" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/baltech-ag/MobileIDSDK-pkg";
+			requirement = {
+				kind = exactVersion;
+				version = 0.09.00;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		PKG_MOBILEID_PRODUCT /* MobileIDSdk */ = {{
+			isa = XCSwiftPackageProductDependency;
+			package = PKG_MOBILEID;
+			productName = MobileIDSdk;
+		}};
+/* End XCSwiftPackageProductDependency section */
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -316,7 +336,7 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../../sdk/build/XCFrameworks/debug",
+					"$(PROJECT_DIR)/../../sdk/build/XCFrameworks/release",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "appnote-swift/Info.plist";
@@ -372,7 +392,7 @@
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../../sdk/build/XCFrameworks/debug",
+					"$(PROJECT_DIR)/../../sdk/build/XCFrameworks/release",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "appnote-swift/Info.plist";
