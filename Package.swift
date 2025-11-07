@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "MobileIDSdk",
-            targets: ["MobileIDSdk", "CryptoKitBridge"])
+            targets: ["MobileIDSdkBinary", "CryptoKitBridge"])
     ],
     targets: [
         .target(
@@ -18,7 +18,7 @@ let package = Package(
             publicHeadersPath: "include"
         ),
         .binaryTarget(
-            name: "MobileIDSdk",
+            name: "MobileIDSdkBinary",
             url: "https://github.com/baltech-ag/MobileIDSDK-pkg/releases/download/0.10.0/MobileIDSDK.xcframework.zip",
             checksum: "34a9a92f8b08c1d2144d2b11049877d4cf6712129e8a5369e02394b45fbc53c8")
     ]
