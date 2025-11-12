@@ -58,8 +58,8 @@ kotlin {
                         "0.00.01" // fallback version
                     }
                     // KMP publishes Android as a separate artifact with -android suffix
-                    // The artifact ID is MobileIDSDK-android
-                    implementation("de.baltech:MobileIDSDK-android:$sdkVersion")
+                    // The artifact ID is sdk-android on Maven Central
+                    implementation("de.baltech:sdk-android:$sdkVersion")
                     // For iOS, the framework is linked via Xcode project
                     // Dependencies are automatically resolved from the AAR's POM
                 }

@@ -14,6 +14,7 @@ kotest = "5.8.0"
 datastore = "1.1.1"
 ktor = "2.3.7"
 nmcp = "0.0.9"
+swiftklib = "0.6.3"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -48,3 +49,4 @@ android-library = { id = "com.android.library", version.ref = "android-gradle" }
 android-application = { id = "com.android.application", version.ref = "android-gradle" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 nmcp = { id = "com.gradleup.nmcp", version.ref = "nmcp" }
+swiftklib = { id = "io.github.ttypic.swiftklib", version.ref = "swiftklib" }
