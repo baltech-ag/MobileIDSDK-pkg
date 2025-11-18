@@ -59,6 +59,14 @@ tasks.register("configureStandalone") {
     // Capture project directory during configuration to avoid accessing project during execution
     val projectDirectory = project.projectDir
 
+    // Read version from VERSION file for SPM minimumVersion
+    val versionFile = File(projectDirectory.parentFile.parentFile, "VERSION")
+    val sdkVersion = if (versionFile.exists()) {
+        versionFile.readText().trim()
+    } else {
+        "0.10.0" // fallback to current hardcoded version
+    }
+
     doLast {
         val devProjectFile = File(projectDirectory, "appnote-swift-dev.xcodeproj/project.pbxproj")
         val standaloneProjectDir = File(projectDirectory, "appnote-swift.xcodeproj")
@@ -125,7 +133,7 @@ tasks.register("configureStandalone") {
 			repositoryURL = "https://github.com/baltech-ag/MobileIDSDK-pkg.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
+				minimumVersion = $sdkVersion;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

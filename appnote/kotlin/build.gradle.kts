@@ -55,7 +55,7 @@ kotlin {
                     val sdkVersion = if (versionFile.exists()) {
                         versionFile.readText().trim()
                     } else {
-                        "0.00.01" // fallback version
+                        "0.0.1" // fallback version
                     }
                     // KMP publishes Android as a separate artifact with -android suffix
                     // The artifact ID is sdk-android on Maven Central
@@ -123,5 +123,44 @@ android {
         release {
             isMinifyEnabled = false
         }
+    }
+}
+
+// Task to update iOS app version from VERSION file
+tasks.register("updateIosAppVersion") {
+    group = "version management"
+    description = "Updates iOS app version in Info.plist from VERSION file"
+
+    // Capture directories during configuration to avoid accessing project during execution
+    val versionFilePath = if (isSubproject) {
+        File(project.rootProject.projectDir, "VERSION")
+    } else {
+        File(project.rootDir.parentFile, "VERSION")
+    }
+    val plistFile = File(project.projectDir, "iosApp/iosApp/Info.plist")
+
+    doLast {
+
+        if (!versionFilePath.exists()) {
+            println("⚠️  VERSION file not found: ${versionFilePath.absolutePath}")
+            return@doLast
+        }
+
+        if (!plistFile.exists()) {
+            println("⚠️  Info.plist file not found: ${plistFile.absolutePath}")
+            return@doLast
+        }
+
+        val version = versionFilePath.readText().trim()
+        val content = plistFile.readText()
+
+        // Update CFBundleShortVersionString
+        val updated = content.replace(
+            Regex("<key>CFBundleShortVersionString</key>\\s*<string>[^<]*</string>"),
+            "<key>CFBundleShortVersionString</key>\n\t<string>$version</string>"
+        )
+
+        plistFile.writeText(updated)
+        println("✓ Updated iOS app version to $version in ${plistFile.name}")
     }
 }
