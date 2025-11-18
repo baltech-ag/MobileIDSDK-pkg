@@ -404,7 +404,7 @@
 			repositoryURL = "https://github.com/baltech-ag/MobileIDSDK-pkg.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
+				minimumVersion = 0.14.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
