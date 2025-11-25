@@ -1,0 +1,21 @@
+# AppNote build artifacts
+# Note: Source code is committed, but build outputs are not
+
+# Gradle build outputs
+**/build/
+**/.gradle/
+
+# IDE files
+**/*.iml
+**/.idea/
+
+# Xcode build outputs
+**/DerivedData/
+**/xcuserdata/
+**/*.xcuserstate
+
+# Local configuration files
+**/local.properties
+
+# macOS
+**/.DS_Store

@@ -1,0 +1,26 @@
+# MobileIDSDK-pkg Repository .gitignore
+
+# Build outputs
+build/
+.gradle/
+*.iml
+.idea/
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Xcode
+DerivedData/
+*.xcworkspace
+xcuserdata/
+*.xcuserstate
+
+# Gradle wrapper (if present in appnotes)
+# We keep the wrapper for standalone builds
+# .gradle-wrapper.jar is small and should be committed
+
+# Local configuration
+local.properties
