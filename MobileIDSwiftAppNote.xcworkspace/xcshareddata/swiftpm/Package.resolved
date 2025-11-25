@@ -1,0 +1,15 @@
+{
+  "originHash" : "d72d5dcbce7649617697749356d3b877f42dfe0ed81ffc05f4d30582f0270774",
+  "pins" : [
+    {
+      "identity" : "mobileidsdk-pkg",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/baltech-ag/MobileIDSDK-pkg.git",
+      "state" : {
+        "revision" : "e2e631c5f7c34ad6aa1666f0680975e4f148f8f8",
+        "version" : "0.17.0"
+      }
+    }
+  ],
+  "version" : 3
+}
