@@ -14,7 +14,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "MobileIDSdk",
-            url: "https://github.com/baltech-ag/MobileIDSDK-pkg/raw/master/sdk/ios/v1.1.0/MobileIDSDK.xcframework.zip",
-            checksum: "21b7eb838b5815eb3d188c3f256e10b7ddf1ee496323b09eb592bf20e238269e")
+            url: "https://github.com/baltech-ag/MobileIDSDK-pkg/raw/master/sdk/ios/v1.2.0/MobileIDSDK.xcframework.zip",
+            checksum: "1d84f20cbe2e821ea1b6654d99ac3a5bf9dab39441f9a00da1e735708e447208")
     ]
 )
